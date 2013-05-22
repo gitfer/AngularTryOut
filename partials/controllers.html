@@ -1,0 +1,21 @@
+<div ng-controller="ItemsController">
+	<input style="margin-top: 1em" type="text" name="searchInput" value="Search input" ng-model="query" />
+
+	<div style="margin-top: 1em">
+	<strong>Searching for: <span ng-bind="searchItem"></span></strong>
+	</div>
+	<div>
+		<strong>Ordering:</strong>
+	<input type="radio" name="ordering" value="Categoria" ng-model="ordering"/>Categoria
+	<input type="radio" name="ordering" value="Prezzo" ng-model="ordering"/>Prezzo (not working out-of-the-box)
+	<input type="radio" name="ordering" value="Name" ng-model="ordering"/>Nome
+	</div>
+	<ul>
+		<li ng-repeat="item in items | filter: query | orderBy: ordering">
+		<p>Elemento n. {{$index + 1}}</p>
+		<p style="background-color: azure">{{item.Categoria | uppercase}}</p>
+		<p>{{item.Name}}</p>
+		<p>{{item.Value | currency }}</p>
+		</li>
+	</ul>
+</div>

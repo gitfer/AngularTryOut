@@ -1,4 +1,4 @@
-function ItemsController($scope) {
+var itemsController = function ($scope) {
 	$scope.items = [
 		{
 		Name: "Cinghia di trasmissione",
@@ -17,4 +17,7 @@ function ItemsController($scope) {
 	}
 	];
 	$scope.ordering = 'Value';
-}
+	$scope.$watch('query', function(itm){
+		$scope.searchItem = itm;
+	});
+};
