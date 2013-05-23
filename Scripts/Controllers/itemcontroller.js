@@ -1,7 +1,7 @@
 var itemsController = function ($scope) {
 	$scope.items = [
 		{
-		Name: "Cinghia di trasmissione",
+		Name: "Trasmissione",
 		Value: 22,
 		Categoria: "Auto"
 	},
@@ -20,4 +20,8 @@ var itemsController = function ($scope) {
 	$scope.$watch('query', function(itm){
 		$scope.searchItem = itm;
 	});
+	$scope.clear = function(){
+		$scope.searchItem = 
+		$scope.query = "";
+	};
 };
