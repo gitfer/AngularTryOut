@@ -24,4 +24,7 @@ var itemsController = function ($scope) {
 		$scope.searchItem = 
 		$scope.query = "";
 	};
+	$scope.detail = function(item){
+		alert('Prezzo '+item.Name+': '+item.Value);
+	};
 };

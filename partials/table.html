@@ -1,0 +1,12 @@
+<table cellspacing="0" ng-controller="ItemsController" style="margin: 40px 20px 20px 20px;" >
+	<thead>
+		<th><a href ng-click="predicate='Categoria'; reverse=!reverse">Categoria</a></th>
+		<th><a href ng-click="predicate='Value'; reverse=!reverse">Prezzo</a></th>
+		<th><a href ng-click="predicate='Name'; reverse=!reverse">Name</a></th>
+		<th><a href ng-click="predicate=''; reverse=!reverse"></a></th>
+		<tr ng-style="[{ backgroundColor: 'white' },{ backgroundColor: 'lightgrey' }][$index%2]" ng-repeat="item in items | orderBy: predicate:reverse" >
+		<td>{{item.Categoria}}</td>
+                <td>{{item.Name}}</td>
+		<td><a href="" ng-click="detail(item)">Dettaglio {{item.Name}}</a></td>
+        </tr>
+</table>
