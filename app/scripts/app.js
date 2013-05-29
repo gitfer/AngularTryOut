@@ -6,6 +6,7 @@ myAppModule.config(function($routeProvider){
 		.when('/controllers/', {controller: 'ItemsController', templateUrl: '/app/views/controllers.html'})
 		.when('/table/', {templateUrl: '/app/views/table.html'})
 		.when('/itemdetail/:Name', {controller: itemDetailController, templateUrl: '/app/views/itemdetail.html' })
+		.when('/componentsVscontainers', {templateUrl: '/app/views/componentsVscontainers.html' })
 		.otherwise({redirectTo: '/'});
 });
 myAppModule.factory('ItemsService', itemsService);
