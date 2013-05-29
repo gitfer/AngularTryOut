@@ -1,7 +1,15 @@
 <!--Potevo evitare di specificare il controller nella config del routing e specificare come qua sotto:-->
 <!--<div ng-controller="ItemsController">-->
+
+<!--Direttiva ng-app determina il rootScope-->
+<!--array items disponibile tramite scope inheritance da ItemsController-->
+
 <div>
 	<h3>Controller, filtri, dependency injection</h3>
+	<h4>
+Two-way binding tra il modello 'ordering' e il radio button.
+Quando il modello cambia viene aggiornato l'ordinamento della lista
+	</h4>
 	<input style="margin-top: 1em" type="text" name="searchInput" value="Search input" ng-model="query" />
 	<span ng-click='clear()'>X</span>
 	<div style="margin-top: 1em">
