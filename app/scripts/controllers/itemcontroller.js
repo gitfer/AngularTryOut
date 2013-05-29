@@ -1,4 +1,5 @@
 var itemsController = function ($scope, ItemsService, $location) {
+	//Recupero items tramite servizio
 	$scope.items = ItemsService.query();
 	$scope.ordering = 'Value';
 	$scope.$watch('query', function(itm){
