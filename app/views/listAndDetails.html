@@ -1,0 +1,13 @@
+<p>This is the listAndDetails view.</p>
+<table cellspacing="0">
+        <tr ng-repeat='pirata in pirati'>
+		<td><a  href ng-click="setSelected(pirata)">{{pirata.name}}</a></td>
+		<td>{{pirata.surname}}</td>
+        </tr>
+</table>
+
+<div>
+	<input type="text" ng-model="pirataSelected.name" />
+	<input type="text" ng-model="pirataSelected.surname" />
+	<input type="submit"></input>
+</div>
