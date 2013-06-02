@@ -1,11 +1,13 @@
 'use strict';
 
 angular.module('AngularTryOutApp')
-.controller('ListAndDetailsCtrl',['$scope', '$filter', 'PiratesService', function ($scope, $filter, PiratesService) {
+.controller('ListAndDetailsCtrl',['$scope', 'PiratesService', function ($scope, PiratesService) {
 	$scope.pirati = PiratesService.getPirates();
-	$scope.pirataSelected = $scope.pirati[0];
+	$scope.pirataSelected = PiratesService.find({name: 'Elaine'})
 	$scope.setSelected = function(pirata){
-		var piratiTrovati =$filter('filter')($scope.pirati, {name: pirata.name});
-		$scope.pirataSelected = piratiTrovati[0];
+		$scope.pirataSelected = PiratesService.find({name: pirata.name});
+	};
+	$scope.doSubmit = function(){
+		alert('salvato');
 	};
 }]);

@@ -1,13 +1,17 @@
 <p>This is the listAndDetails view.</p>
 <table cellspacing="0">
-        <tr ng-repeat='pirata in pirati'>
+	<tr ng-repeat='pirata in pirati'>
 		<td><a  href ng-click="setSelected(pirata)">{{pirata.name}}</a></td>
 		<td>{{pirata.surname}}</td>
-        </tr>
+	</tr>
 </table>
 
-<div>
-	<input type="text" ng-model="pirataSelected.name" />
-	<input type="text" ng-model="pirataSelected.surname" />
-	<input type="submit"></input>
-</div>
+<form name="myForm" ng-submit="doSubmit()">
+	<fieldset>
+		<legend><h4>Pirata: {{pirataSelected.name + ' '+ pirataSelected.surname}}</h4></legend>
+		<input type="text" ng-model="pirataSelected.name" ng-minlength='1' required />(min 1 char)<br/>
+		<input type="text" ng-model="pirataSelected.surname" ng-minlength='2' required/>(min 2 chars)<br/>
+		<!--Automatic polyfill and clientsidevalidation check-->
+		<input ng-disabled="!myForm.$valid" type="submit"></input>
+	</fieldset>
+</form>

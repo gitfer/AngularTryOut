@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('AngularTryOutApp')
-  .factory('PiratesService', function () {
+  .factory('PiratesService', ['$filter', function ($filter) {
     // Service logic
     // ...
 
@@ -15,6 +15,12 @@ angular.module('AngularTryOutApp')
     return {
       getPirates: function () {
         return pirates;
+      },
+      find: function(obj){
+		var piratiTrovati =$filter('filter')(pirates, obj);
+		return { name: piratiTrovati[0].name,
+			surname: piratiTrovati[0].surname,
+			isPirate: piratiTrovati[0].isPirate};
       }
     };
-  });
+  }]);
