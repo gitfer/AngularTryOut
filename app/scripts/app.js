@@ -7,6 +7,10 @@ angular.module('AngularTryOutApp', [])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/conditionals', {
+        templateUrl: 'views/conditionals.html',
+        controller: 'ConditionalsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
