@@ -6,9 +6,9 @@ angular.module('AngularTryOutApp')
     // ...
 
     var pirates = [
-                {name: 'Guybrush', surname: 'Threepwood', isPirate: false},
-                {name: 'Elaine', surname: 'Marley', isPirate: false},
-                {name: 'Pirate', surname: 'LeChuck', isPirate: true}
+                {id: 1, name: 'Guybrush', surname: 'Threepwood', isPirate: false},
+                {id: 2, name: 'Elaine', surname: 'Marley', isPirate: false},
+                {id: 3, name: 'Pirate', surname: 'LeChuck', isPirate: true}
             ];
 
     // Public API here
@@ -20,6 +20,7 @@ angular.module('AngularTryOutApp')
 		var piratiTrovati =$filter('filter')(pirates, obj);
 		return { name: piratiTrovati[0].name,
 			surname: piratiTrovati[0].surname,
+			id: piratiTrovati[0].id,
 			isPirate: piratiTrovati[0].isPirate};
       }
     };

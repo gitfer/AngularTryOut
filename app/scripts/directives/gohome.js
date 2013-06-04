@@ -6,7 +6,7 @@ angular.module('AngularTryOutApp')
 		//scope:{
 			//testo: "@"
 		//},
-		template: '<div><a href="/">{{testo}}</a></div>',
+		template: '<div style="background-color: red"><a href="/">{{testo}}</a></div>',
 		restrict: 'E',
 		link: function (scope, element, attrs) {
 			// body...

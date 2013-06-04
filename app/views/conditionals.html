@@ -1,9 +1,12 @@
-<p>This is the conditionals view.</p>
+<h3>Direttive</h3>
 <ul>
 	<li ng-repeat="pirata in pirati">
-	<span>{{pirata.name}}</span>
-	<span>{{pirata.surname}}</span>
-	<span>{{emitSoundIfPirate(pirata.isPirate)}}</span>
-	<!--oppure filtro sul booleano-->
+		<span ng-bind="pirata.name"></span>
+		<span>{{pirata.surname}}</span>
+		<span style="background-color: orange">{{emitSoundIfPirate(pirata.isPirate)}}</span>
+		<!--oppure filtro sul booleano-->
 	</li>
 </ul>
+<br />
+Qua sotto una direttiva custom (direttive di vari tipi: EACM):
+<gohome testo="Torna alla pagina principale"></gohome>

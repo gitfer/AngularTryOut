@@ -3,8 +3,10 @@
 angular.module('AngularTryOutApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
-      '/#/conditionals',
-      '/#/listAndDetails',
-      'Karma'
+      '/#/controllers',
+      '/#/directives',
+      '/#/servicesAndForms',
+      '/#/filtri',
+      'Karma, DeepLinking, routing, templating, test unitari e e2e'
     ];
   });

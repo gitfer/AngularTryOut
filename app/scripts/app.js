@@ -7,13 +7,21 @@ angular.module('AngularTryOutApp', [])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/conditionals', {
+      .when('/directives', {
         templateUrl: 'views/conditionals.html',
         controller: 'ConditionalsCtrl'
       })
-      .when('/listAndDetails', {
+      .when('/servicesAndForms', {
         templateUrl: 'views/listAndDetails.html',
         controller: 'ListAndDetailsCtrl'
+      })
+      .when('/filtri', {
+        templateUrl: 'views/filtri.html',
+        controller: 'FiltriCtrl'
+      })
+      .when('/dettaglioPirata/:id', {
+        templateUrl: 'views/dettaglioPirata.html',
+        controller: 'DettaglioPirataCtrl'
       })
       .otherwise({
         redirectTo: '/'
