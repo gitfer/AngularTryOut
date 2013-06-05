@@ -1,0 +1,51 @@
+<h3>ListAndDetailsView: Binding, Tipi di servizi, forms, polyfilling attributi di validazione</h3>
+
+<input type="checkbox" class="checkbox" value="" ng-model="spunta" ng-init="spunta=true" name="" checked>Nascondi Tabella tipi di servizi
+<table cellspacing="0" ng-hide="spunta">
+        <tr>
+                <td>Function</td>
+                <td>Defines</td>
+        </tr>
+        <tr>
+                <td>provider(name, Object OR constructor() )</td>
+                <td>A configurable service with complex creation logic. If you pass an Object, it should have a
+function named $get that returns an instance of the service. Otherwise, Angular assumes you’ve
+passed a constructor that, when called, creates the instance.</td>
+        </tr>
+        <tr>
+                <td>factory(name, $get Function())</td>
+                <td>A non-configurable service with complex creation logic. You specify a function that, when
+			called, returns the service instance. You could think of this as provider(name, { $get: $getFunction() })</td>
+        </tr>
+        <tr>
+                <td>service(name, constructor())</td>
+                <td>A non-configurable service with simple creation logic. Like the constructor option with provider,
+                      Angular calls it to create the service instance.</td>
+        </tr>
+</table>
+
+<br />
+<br />
+<table cellspacing="0">
+	<tr ng-repeat='pirata in pirati'>
+		<td><a  href ng-click="setSelected(pirata)">{{pirata.name}}</a></td>
+		<td>{{pirata.surname}}</td>
+		<td><a ng-href="/#/dettaglioPirata/{{pirata.id}}">Dettaglio</a></td>
+	</tr>
+</table>
+
+<br />
+<form name="myForm" ng-submit="doSubmit()">
+	<fieldset>
+		<legend><h4>Pirata: {{pirataSelected.name + ' '+ pirataSelected.surname}}</h4></legend>
+		<input type="text" name="pirateName" ng-model="pirataSelected.name" ng-minlength='1' required />(min 1 char)
+		<span style="color:red" ng-show="myForm.pirateName.$error.required">Il campo è obbligatorio!</span>
+		<br/>
+		<input type="text" name="pirateSurname" ng-model="pirataSelected.surname" ng-minlength='2' required/>(min 2 chars)
+		<span style="color:red" ng-show="myForm.pirateSurname.$error.minlength">Almeno 2 caratteri!</span>
+		<span style="color:red" ng-show="myForm.pirateSurname.$error.required">Il campo è obbligatorio!</span>
+		<br/>
+		<!--Automatic polyfill and clientsidevalidation check-->
+		<input ng-disabled="!myForm.$valid" type="submit"></input>
+	</fieldset>
+</form>

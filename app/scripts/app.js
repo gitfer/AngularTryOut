@@ -1,15 +1,29 @@
-var myAppModule = angular.module('miaApp', ['ngLocale']);
+'use strict';
 
-myAppModule.config(function($routeProvider){
-	$routeProvider
-		.when('/directives/', {templateUrl: '/app/views/firstDirectives.html'})
-		.when('/controllers/', {controller: 'ItemsController', templateUrl: '/app/views/controllers.html'})
-		.when('/table/', {templateUrl: '/app/views/table.html'})
-		.when('/itemdetail/:Name', {controller: itemDetailController, templateUrl: '/app/views/itemdetail.html' })
-		.when('/componentsVscontainers', {templateUrl: '/app/views/componentsVscontainers.html' })
-		.otherwise({redirectTo: '/'});
-});
-myAppModule.factory('ItemsService', itemsService);
-myAppModule.controller('ItemsController',['$scope', 'ItemsService', '$location', itemsController]);
-myAppModule.controller('ItemDetailController',['$scope', 'ItemsService', '$routeParams', itemDetailController]);
-myAppModule.directive('showHeaderLink', [ '$rootScope', '$location', showHeaderLink ]);
+angular.module('AngularTryOutApp', [])
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/directives', {
+        templateUrl: 'views/conditionals.html',
+        controller: 'ConditionalsCtrl'
+      })
+      .when('/servicesAndForms', {
+        templateUrl: 'views/listAndDetails.html',
+        controller: 'ListAndDetailsCtrl'
+      })
+      .when('/filtri', {
+        templateUrl: 'views/filtri.html',
+        controller: 'FiltriCtrl'
+      })
+      .when('/dettaglioPirata/:id', {
+        templateUrl: 'views/dettaglioPirata.html',
+        controller: 'DettaglioPirataCtrl'
+      })
+      .otherwise({
+        redirectTo: '/'
+      });
+  });
