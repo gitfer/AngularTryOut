@@ -7,6 +7,6 @@ angular.module('AngularTryOutApp')
       '/#/directives',
       '/#/servicesAndForms',
       '/#/filtri',
-      'Karma, DeepLinking, routing, templating, test unitari e e2e'
+      'Karma, DeepLinking, routing, templating, test unitari e e2e, batarang'
     ];
   });
