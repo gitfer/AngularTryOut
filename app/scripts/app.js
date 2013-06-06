@@ -23,6 +23,10 @@ angular.module('AngularTryOutApp', [])
         templateUrl: 'views/dettaglioPirata.html',
         controller: 'DettaglioPirataCtrl'
       })
+      .when('/Recipe', {
+        templateUrl: 'views/Recipe.html',
+        controller: 'RecipeCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

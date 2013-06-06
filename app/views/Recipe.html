@@ -1,0 +1,11 @@
+<div>
+Istruzioni: {{istruzioni}}<br />
+Tempo preparazione: {{tempoPreparazione}}<br />
+Costo massimo: {{costoMassimo}}
+</div>
+<div ng-controller="IngredientsCtrl">
+<ul>
+		<li ng-repeat="ingre in ingredienti">{{ingre.ingrediente}}  <a href ng-click="aggiungiIngrediente(ingre)">Cliccami</a></li>
+</ul>
+	
+</div>
