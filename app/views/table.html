@@ -1,5 +1,6 @@
+<div ng-controller="ItemsController">
 <h3>Routing in azione, direttiva custom(component)</h3>
-<table cellspacing="0" ng-controller="ItemsController" style="margin: 40px 20px 20px 20px;" >
+<table cellspacing="0"  style="margin: 40px 20px 20px 20px;" >
 	<thead>
 		<th><a href ng-click="predicate='Categoria'; reverse=!reverse">Categoria</a></th>
 		<th><a href ng-click="predicate='Name'; reverse=!reverse">Name</a></th>
@@ -10,3 +11,6 @@
 		<td><a href="" ng-click="detail(item)">Dettaglio {{item.Name}}</a></td>
         </tr>
 </table>
+
+	<span>{{selezionato.Name}}</span>
+</div>
