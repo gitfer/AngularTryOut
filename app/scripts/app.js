@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('AngularTryOutApp', [])
+angular.module('AngularTryOutApp', ['ngResource'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -22,6 +22,15 @@ angular.module('AngularTryOutApp', [])
       .when('/dettaglioPirata/:id', {
         templateUrl: 'views/dettaglioPirata.html',
         controller: 'DettaglioPirataCtrl'
+      })
+      .when('/editPirata/:pirata', {
+        templateUrl: 'views/editPirata.html',
+        controller: 'EditPirataCtrl',
+        resolve: {
+            pirata: function(PiratesDeferredLoader) {
+                  return PiratesDeferredLoader();
+            }
+        }
       })
       .when('/Recipe', {
         templateUrl: 'views/Recipe.html',
